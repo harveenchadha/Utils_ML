@@ -1,0 +1,8 @@
+from google.colab import files
+files.upload()
+
+
+!pip install -q kaggle
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!kaggle competitions download -c ieee-fraud-detection
