@@ -1,0 +1,8 @@
+!git clone https://github.com/Microsoft/LightGBM
+%cd /content/LightGBM
+!mkdir build
+!cmake -DUSE_GPU=1 #avoid ..
+!make -j$(nproc)
+!sudo -H pip install setuptools pandas numpy scipy scikit-learn -U
+%cd /content/LightGBM/python-package
+!sudo python setup.py install --precompile
