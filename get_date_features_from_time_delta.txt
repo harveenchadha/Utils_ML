@@ -1,0 +1,17 @@
+def get_features_from_date(df):
+  df['Ticks'] = df['TransactionDT'] + (-86400)
+  df['Date'] =  pd.to_datetime(df['Date']) + pd.to_timedelta(df_train['Ticks'], unit='s') 
+  df['Date']= pd.to_datetime(df['Date']) 
+  df['Month'] = df['Date'].dt.month
+  df['Year'] = df['Date'].dt.year
+  df['Day'] = df['Date'].dt.day
+  df['DOW'] = df['Date'].dt.dayofweek
+  df['Is_Weekend'] = (df['DOW'] > 4).astype('int64')
+  df.drop(columns = ['Ticks', 'Date'], inplace=True)
+  return df
+  
+  
+  
+START_DATE = datetime.datetime.strptime('2017-11-30', '%Y-%m-%d')
+df_train['Date'] = START_DATE
+df_train = get_features_from_date(df_train)
