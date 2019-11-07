@@ -6,3 +6,13 @@ files.upload()
 !mkdir -p ~/.kaggle
 !cp kaggle.json ~/.kaggle/
 !kaggle competitions download -c ieee-fraud-detection
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+!pip uninstall -y kaggle
+!pip install --upgrade pip
+!pip install kaggle==1.5.6
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!kaggle -v
