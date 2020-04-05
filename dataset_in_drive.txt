@@ -1,0 +1,17 @@
+from google.colab import files
+files.upload()
+
+!pip uninstall -y kaggle
+!pip install --upgrade pip
+!pip install kaggle==1.5.6
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!kaggle -v
+
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+import os
+os.chdir('drive/My Drive/Kaggle/jigsaw')
+!kaggle competitions download -c jigsaw-multilingual-toxic-comment-classification
