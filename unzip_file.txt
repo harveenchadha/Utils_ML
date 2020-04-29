@@ -1,3 +1,19 @@
 import zipfile
 with zipfile.ZipFile('./test_identity.csv.zip', 'r') as zip_ref:
     zip_ref.extractall()
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+__To extract only specific files__:
+
+archive = zipfile.ZipFile('./data.zip')
+remaining_files = []
+
+for file in archive.namelist():
+    
+    if file.startswith('images_010/images/') or file.startswith('images_011/images/') or file.startswith('images_012/images/'):
+        remaining_files.append(file)
+    #     archive.extract(file, 'destination_path')
