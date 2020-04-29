@@ -16,3 +16,12 @@ files.upload()
 !mkdir -p ~/.kaggle
 !cp kaggle.json ~/.kaggle/
 !kaggle -v
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+__To download dataset:__
+!kaggle datasets download nih-chest-xrays/data
